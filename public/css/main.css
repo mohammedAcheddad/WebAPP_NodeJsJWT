@@ -1,0 +1,264 @@
+:root {
+    --mainColor: #0A2647;
+    --secondColor: #144272;
+    --thirdColor: #205295;
+    --fourthColor: #2C74B3;
+    --textColor: white
+  }
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color:inherit;
+    transition-duration: 500ms;
+}
+
+
+.delete{
+    border: 0px;
+    padding: 10px 20px;
+    background-color: rgb(187, 58, 58);
+    color: white;
+}
+/* header */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--mainColor);
+    color: var(--textColor);
+    position: sticky;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    flex-wrap: wrap;
+}
+header nav li{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+header nav li:hover{
+    background-color: var(--textColor);
+    color: var(--mainColor);
+}
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.selected{
+    background-color: var(--fourthColor);
+}
+
+/* main */
+main{
+    display: flex;
+    background: rgb(32,82,149);
+    background: radial-gradient(circle, rgba(32,82,149,1) 0%, rgba(142,178,210,1) 100%);
+}
+.hidden{
+    display: none!important;
+}
+section{
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* Welcome sectionn */
+#welcome{
+   
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: var(--textColor);
+    padding: 20px;
+   }
+#welcome h2{
+    font-size: 4em;
+    margin-bottom: 30px;  
+}
+#welcome p{
+    font-size: 2em;
+    text-align: justify;
+}
+
+/* login / Register */
+#login, #register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#login .container , #register .container{
+    border: 1px solid var(--thirdColor);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+#login .container h2, #register .container h2{
+    font-size: 2em;
+    color:var(--textColor);
+ 
+}
+#login .fieldInput, #register .fieldInput{
+    position: relative;
+    padding: 15px;
+    margin-top: 10px;
+   
+}
+#login input, #register input  {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--textColor);
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+#login input::placeholder, #register input::placeholder {
+      color: transparent;
+}
+#login input:placeholder-shown ~ label, #register input:placeholder-shown ~ label {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 25px;
+}
+#login label, #register label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: var(--textColor);
+  }
+
+#login input:focus ~ label, #register input:focus ~ label {   
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: white;
+      font-weight:700;    
+}
+#login input:focus, #register input:focus{
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: radial-gradient(circle, rgba(32,82,149,1) 0%, rgb(187, 193, 197) 100%);
+    border-image-slice: 1;
+}
+#login button, #register button{
+    border: 0px;
+    font-size: 1em;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition-duration: 500ms;
+}
+#login button:hover, #register button:hover{
+    background-color: var(--fourthColor);
+    color: white;
+}
+  
+/* application */
+#application{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-height: 100vh;
+    justify-content: center;
+    color: var(--textColor);
+    padding: 200px;
+    gap: 20px;
+   }
+#application #addMemo{
+    width: 300px;
+    border: 1px solid lightgray;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#application #addMemo input{
+    border: 0px;
+    border-bottom: 1px solid white;
+    margin: 20px 0px;
+    font-size: 1em;
+    padding: 5px;
+    background-color: transparent;
+}
+#application #addMemo input::placeholder{
+    color: var(--textColor);
+   
+}
+#application #addMemo .btns{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+#application #addMemo .btns button{
+    border: 0px;
+    border-radius: 5px;
+    width: 80px;
+    font-size: 1em;
+    padding: 5px 10px;
+}
+#application #addMemo #resetBtn{
+    background-color: var(--textColor);
+    color: var(--mainColor);
+}
+#application #addMemo #resetBtn:hover{
+    color: var(--textColor);
+    background-color: var(--mainColor);
+}
+#application #addMemo #addBtn{
+    background-color: var(--mainColor);
+    color: var(--textColor);
+}
+#application #addMemo #addBtn:hover{
+    color: var(--mainColor);
+    background-color: var(--textColor);
+}
+
+#application #listMemo{
+    max-width: 600px;
+    min-width: 300px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#application #listMemo table{
+    border-collapse: collapse;
+    width: 100%;
+}
+#application #listMemo table th,#application #listMemo table td{
+    border: 1px solid lightgray;
+}
+/* footer */
+footer{
+    text-align: center;
+    padding: 50px;
+    background-color: var(--secondColor);
+    color: var(--textColor);
+    position: fixed;
+    bottom: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}

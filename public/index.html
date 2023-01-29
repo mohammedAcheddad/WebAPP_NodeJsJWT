@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script  type="module" src="js/config.js"> </script>
+    <script  type="module" src="js/auth.js" ></script>
+    <script  type="module" src="js/main.js"> </script>
+</head>
+<body>
+    <header>
+        <h1>Client web (Rest Api)</h1>
+        <nav>
+            <ul>
+                <li id="welcomeElement"><a href="#welcome">Welcome</a></li>
+                <li id="applicationElement"><a href="#application">application</a></li>
+                <li id="loginElement"><a href="#login">login</a></li>
+                <li id="logoutElement" class="hidden"><a href="#login">Logout</a></li>
+                <li id="registerElement"><a href="#register">register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main  id="container">
+         <!-- welcome -->
+        <section class="component hidden" id="welcome">
+            <h2>Welcome</h2>
+            <p>to our web client for a web service developed using the rest api convention</p>
+        </section>
+         <!-- end welcome -->
+         <!-- application -->
+        <section class="component hidden" id="application">
+            <article id="addMemo">
+                <h2>
+                    Add Memo
+                </h2>
+                <div>
+                    <input id="memoInput"  placeholder="content" type="text">
+                </div>
+                <div class="btns">
+                    <button id="resetBtn">Reset</button>
+                    <button id="addBtn">Add</button>
+                </div>
+            </article>
+            <article id="listMemo">
+                <h2>List of Memos <span id="loading" class="hidden">loading...</span></h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>content</th>
+                            <th>date</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+            </article>
+        </section>
+         <!-- end application -->
+         <!-- login -->
+        <section class="component hidden" id="login">
+            
+            <div class="container">
+                <h2>Login</h2>
+                <div class="fieldInput">
+                    <input type="input"  placeholder="Name" name="emailLogin" id='emailLogin' />
+                    <label for="emailLogin" >Email</label>
+                  </div>
+                <div class="fieldInput">
+                    <input type="password" placeholder="Password" name="passwordLogin" id='passwordLogin' />
+                    <label for="passwordLogin" >Password</label>
+                </div>
+                <button id="loginBtn">login</button>
+            </div>
+        </section>
+         <!-- end login -->
+        <!-- register -->
+        <section class="component hidden" id="register">
+            <div class="container">
+                <h2>Register</h2>
+                <div class="fieldInput">
+                    <input type="input"  placeholder="Name" name="emailRegister" id='emailRegister' />
+                    <label for="emailRegister" >Email</label>
+                  </div>
+                <div class="fieldInput">
+                    <input type="input"  placeholder="Name" name="nameRegister" id='nameRegister' />
+                    <label for="nameRegister" >Name</label>
+                </div>
+                <div class="fieldInput">
+                    <input type="password" placeholder="Password" name="passwordRegister" id='passwordRegister' />
+                    <label for="passwordRegister" >Password</label>
+                </div>
+                <div class="fieldInput">
+                    <input type="password" placeholder="repeat password" name="passwordRegister2" id='passwordRegister2' />
+                    <label for="passwordRegister2" >Repeat password</label>
+                </div>
+                <button id="registerBtn">Submit</button>
+            </div>
+        </section>
+         <!--end register -->
+    </main>
+    <footer>
+        @copyright Tmimi Mehdi 2022 
+    </footer>
+</body>
+</html>
