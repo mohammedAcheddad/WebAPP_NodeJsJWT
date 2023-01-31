@@ -1,5 +1,5 @@
-import {addBtn, emailLogin, emailRegister, loginBtn, logoutElement, memoInput, nameRegister, passwordLogin, passwordRegister, passwordRegister2, registerBtn, resetBtn, tbody} from "./config.js"
-import {authentify, logout, register} from "./auth.js"
+import {addBtn, changeLoginBtn, changeNameBtn, changePasswordBtn, deleteBtn, emailDisplay, emailLogin, emailRegister, loginBtn, logoutElement, memoInput, nameDisplay, nameRegister, passwordLogin, passwordRegister, passwordRegister2, registerBtn, resetBtn, tbody} from "./config.js"
+import {authentify, deleteUser, logout, register, Update} from "./auth.js"
 import { addMemo, deleteMemo, load } from "./memos.js";
 
 window.addEventListener('popstate', function (event) {
@@ -12,7 +12,6 @@ loginBtn.addEventListener('click',async ()=>{
    if(!login  || !pwd)
     return alert("please complete all fileds")
    await authentify(login,pwd)
-   singlePageManger("#application")
 })
 
 logoutElement.addEventListener('click',()=>{
@@ -30,6 +29,11 @@ addBtn.addEventListener('click',()=>{
         return alert("please provide a content for your memo")
     
     addMemo(content)
+})
+deleteBtn.addEventListener('click',async ()=>{
+    alert("Are you sure you want to delete this account?")
+    deleteUser();
+    singlePageManger("#login");
 })
 
 registerBtn.addEventListener('click',()=>{
@@ -61,7 +65,10 @@ export const viderLogin = ()=>{
     passwordLogin.value=""
     emailLogin.value=""
 }
-
+export const viderAccount = ()=>{
+    nameDisplay.innerText="name";
+    emailDisplay.innerText="login";
+}
 
 export const addMemoToTable=(memo)=>{
     const {date,content,_id} = memo
@@ -99,10 +106,10 @@ export const addMemoToTable=(memo)=>{
 
 const getPath=()=>window.location.hash || '#welcome'
 const singlePageManger = (path)=>{
-    console.log(path)
     if(path=="#application")
     {
         tbody.innerText=""
+        console.log(localStorage.getItem("token"))
         if(localStorage.getItem("token")){
          load();
         }
@@ -119,3 +126,65 @@ const singlePageManger = (path)=>{
     document.querySelector('header nav li:has(a[href="'+path+'"])').classList.add('selected')
 }
 singlePageManger(getPath())
+
+        // Initialize the dialog
+$("#dialog-form").dialog({
+    autoOpen: false,
+    modal: true,
+    buttons: {
+        "Change Password": function() {
+        const newPassword = $("#new-password").val();
+        Update("a",newPassword,"a")
+        $(this).dialog("close");
+        },
+        Cancel: function() {
+        $(this).dialog("close");
+        }
+    }
+    });
+
+$("#dialog-form-name").dialog({
+    autoOpen: false,
+    modal: true,
+    buttons: {
+    "Save": function() {
+        const newName = $("#new-name").val();
+        Update("a","a",newName)
+        $(this).dialog("close");
+    },
+    Cancel: function() {
+        $(this).dialog("close");
+    }
+    }
+});
+
+$("#dialog-form-login").dialog({
+    autoOpen: false,
+    modal: true,
+    buttons: {
+    "Save": function() {
+        const newLogin = $("#new-login").val();
+        Update(newLogin);
+        $(this).dialog("close");
+    },
+    Cancel: function() {
+        $(this).dialog("close");
+    }
+    }
+});
+
+// Show the dialog when the change name button is clicked
+changeNameBtn.addEventListener("click", function() {
+    $("#dialog-form-name").dialog("open");
+    });
+
+    // Show the dialog when the change login button is clicked
+changeLoginBtn.addEventListener("click", function() {
+        $("#dialog-form-login").dialog("open");
+        });
+
+    // Show the dialog when the change password button is clicked
+changePasswordBtn.addEventListener("click", function() {
+    $("#dialog-form").dialog("open");
+    });
+

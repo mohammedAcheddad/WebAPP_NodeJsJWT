@@ -48,12 +48,6 @@ router.get("",async (req,res)=>{
 })
     
 
-// selectionner
-
-
-// modifier
-
-
 
 router.delete("/:idMemo",async (req,res)=>{
     const token = req.headers.authorization;

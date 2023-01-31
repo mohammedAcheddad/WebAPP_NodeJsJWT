@@ -92,13 +92,46 @@ section{
 }
 
 /* login / Register */
-#login, #register{
+#login, #register {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-#login .container , #register .container{
+.field-input{
+    width: 50vh;
+    margin: 30px;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+#account{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.field-input label{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.field-input span{
+    font-style: italic;
+    color: rgb(142, 243, 142);
+    margin-left: 10px;
+}
+#account .container{
+    border: 1px solid var(--thirdColor);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 55vh;
+    width: 55vh;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+#login .container , #register .container {
     border: 1px solid var(--thirdColor);
     border-radius: 10px;
     display: flex;
@@ -106,10 +139,54 @@ section{
     align-items: center;
     padding: 20px;
 }
+.changeBTN{
+    float: right;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.changePWD{
+    float: left;
+    padding: 10px 20px;
+    background-color: rgb(237, 93, 93);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.FinalDiv{
+    width: 50vh;
+}
+.changeBTN:hover {
+    background-color: navy;
+  }
+.deleteBTN:hover , .changePWD:hover{
+    background-color: rgb(122, 14, 14);
+  }
+.deleteBTN{
+    float: right;
+    padding: 10px 20px;
+    background-color: rgb(237, 93, 93);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
 #login .container h2, #register .container h2{
     font-size: 2em;
     color:var(--textColor);
  
+}
+#account .container h2{
+    font-size: 2em;
+    color:var(--textColor);
+    margin-bottom: 30px;
 }
 #login .fieldInput, #register .fieldInput{
     position: relative;
@@ -169,6 +246,48 @@ section{
     margin-top: 20px;
     transition-duration: 500ms;
 }
+#dialog-form {
+    text-align: center;
+    padding: 20px;
+    background-color: #d0c4c4;
+    border: none;
+  }
+#dialog-form fieldset{
+    border: none;
+  }
+#dialog-form  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(73, 73, 236);
+  }
+  
+#dialog-form input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid rgb(63, 80, 236);
+  }
+.formDiv {
+    text-align: center;
+    padding: 20px;
+    background-color: #d0c4c4;
+    border: none;
+  }
+  .formDiv fieldset{
+    border: none;
+  }
+  .formDiv  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(73, 73, 236);
+  }
+  
+  .formDiv input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid rgb(63, 80, 236);
+  }
 #login button:hover, #register button:hover{
     background-color: var(--fourthColor);
     color: white;

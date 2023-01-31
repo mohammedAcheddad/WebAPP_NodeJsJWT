@@ -9,6 +9,9 @@
     <script  type="module" src="js/config.js"> </script>
     <script  type="module" src="js/auth.js" ></script>
     <script  type="module" src="js/main.js"> </script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <header>
@@ -20,6 +23,7 @@
                 <li id="loginElement"><a href="#login">login</a></li>
                 <li id="logoutElement" class="hidden"><a href="#login">Logout</a></li>
                 <li id="registerElement"><a href="#register">register</a></li>
+                <li id="accountElement" class="hidden" ><a href="#account">account</a></li>
             </ul>
         </nav>
     </header>
@@ -60,6 +64,7 @@
                     </tbody>
                 </table>
             </article>
+            
         </section>
          <!-- end application -->
          <!-- login -->
@@ -79,6 +84,28 @@
             </div>
         </section>
          <!-- end login -->
+         <!-- Account -->
+        <section class="component hidden" id="account">
+            <div class="container">
+              <h2>Account Information</h2>
+              <div class="field-input">
+                <label for="name">Name:</label>
+                <span id="display-name">name</span>
+                <button id="change-name-btn" class="changeBTN">Change Name</button>
+              </div>
+              <div class="field-input">
+                <label for="email">Email:</label>
+                <span id="display-email">email</span>
+                <button id="change-login-btn" class="changeBTN">Change Login</button>
+              </div>
+              <div class="FinalDiv">
+                <button id="change-password-btn" class="changePWD">Change Password</button>
+                <button id="delete-btn" class="deleteBTN">Delete Account</button>
+              </div>
+
+            </div>
+        </section>
+        <!-- end Account -->
         <!-- register -->
         <section class="component hidden" id="register">
             <div class="container">
@@ -104,6 +131,30 @@
         </section>
          <!--end register -->
     </main>
+    <div id="dialog-form" class="ZZZ" title="Change Password">
+        <form>
+          <fieldset class="ZZZ">
+            <label for="new-password">New Password:</label>
+            <input type="password" name="new-password" id="new-password" class="text ui-widget-content ui-corner-all">
+          </fieldset>
+        </form>
+      </div>
+      <div id="dialog-form-name" class="formDiv" title="Change Name">
+        <form>
+          <fieldset>
+            <label for="new-name">New Name:</label>
+            <input type="text" name="new-name" id="new-name" class="text ui-widget-content ui-corner-all">
+          </fieldset>
+        </form>
+      </div>
+      <div id="dialog-form-login" class="formDiv" title="Change Login">
+        <form>
+          <fieldset>
+            <label for="new-Login">New Login:</label>
+            <input type="text" name="new-Login" id="new-login" class="text ui-widget-content ui-corner-all">
+          </fieldset>
+        </form>
+      </div>
     <footer>
         @copyright Tmimi Mehdi 2022 
     </footer>
